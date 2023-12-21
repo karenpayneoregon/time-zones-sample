@@ -8,3 +8,12 @@ In InternetHelpers.CurrentTimeFromWeb() a variable for HttpClient has a timeout 
 
 - Useful if a requirement needs timezones
 - A learning exercise.
+
+## Exceptions
+
+If this is shown in the output window in Visual Studio, the `HttpClient` Timeout is too short.
+
+```
+Exception thrown: 'System.Threading.Tasks.TaskCanceledException' in System.Private.CoreLib.dll
+Exception thrown: 'System.Threading.Tasks.TaskCanceledException' in System.Private.CoreLib.dll
+```
