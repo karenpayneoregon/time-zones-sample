@@ -16,9 +16,9 @@ public class InternetHelpers
             /*
              * Timeout may not be needed, comment out or change milliseconds
              */
-            client.Timeout = TimeSpan.FromMilliseconds(1000);
+            client.Timeout = TimeSpan.FromMilliseconds(1500);
             var response = await client.GetAsync(site);
-            return response.Headers.Date.Value;
+            return response.Headers.Date!.Value;
         }
 
         // optionally read from a config file
@@ -28,7 +28,7 @@ public class InternetHelpers
         {
             try
             {
-                var dateTimeOffset = TimeFromSite(site);
+                Task<DateTimeOffset?>? dateTimeOffset = Task.FromResult(await TimeFromSite(site));
                 if (dateTimeOffset is not null)
                 {
                     return await dateTimeOffset;
